@@ -3,6 +3,7 @@ module Sgf.Data.List
     ( insertUniq
     , mapWhen
     , mapWhenM
+    , findM
     , ReadM
     , liftRead
     , readsPrecM
@@ -28,6 +29,13 @@ mapWhen p f         = map (\x -> if p x then f x else x)
 
 mapWhenM :: Eq a => Monad m => (a -> Bool) -> (a -> m a) -> [a] -> m [a]
 mapWhenM p f        = mapM (\x -> if p x then f x else return x)
+
+-- Search a list for element, where predicate returns True, and does *not* run
+-- monad actions on remaining elements (after match has found). I.e. just like
+-- regular `find` does, but with monadic predicate.
+findM :: Monad m => (a -> m Bool) -> [a] -> m (Maybe a)
+findM _ []          = return Nothing
+findM f (x : xs)    = f x >>= \b -> if b then return (Just x) else findM f xs
 
 
 -- Store remaining string in State monad.
@@ -69,7 +77,6 @@ unless' p mx
  | not p            = mx
  | otherwise        = return mempty
 
---
 -- Move all elements, matching predicate, to the head of list.
 riseElems :: (a -> Bool) -> [a] -> [a]
 --riseElems p xs      = filter p xs ++ filter (not . p) xs
