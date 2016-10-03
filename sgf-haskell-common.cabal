@@ -1,5 +1,5 @@
 name:                sgf-haskell-common
-version:             0.2.0.0
+version:             0.3.0
 synopsis:            sgf's haskell common modules
 description:         sgf's haskell common modules
 homepage:            https://github.com/sgf-dma/sgf-haskell-common
