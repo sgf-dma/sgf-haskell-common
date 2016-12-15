@@ -18,6 +18,7 @@ library
   exposed-modules:     Sgf.Control.Lens
                        Sgf.Data.List
                        Sgf.Control.Exception
+                       Sgf.Control.Applicative
                        Sgf.Control.Monad
                        Sgf.System.Process
   build-depends:       base
