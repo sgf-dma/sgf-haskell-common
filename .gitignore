@@ -3,3 +3,4 @@ t.*
 *.hi
 dist/
 .stack-work/
+sgf-haskell-common.cabal
