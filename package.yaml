@@ -1,0 +1,20 @@
+name:       sgf-haskell-common
+version:    '0.4.1'
+synopsis:   sgf's haskell common modules
+category:   Other
+author:     sgf
+maintainer: sgf.dma@gmail.com
+license:    BSD3
+github:     sgf-dma/sgf-haskell-common
+
+dependencies:
+- base
+- mtl
+- transformers
+- filepath
+- directory
+ghc-options:
+- -Wall
+
+library:
+  source-dirs: src
