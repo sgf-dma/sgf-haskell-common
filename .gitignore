@@ -4,3 +4,4 @@ t.*
 dist/
 .stack-work/
 sgf-haskell-common.cabal
+stack.yaml.lock
