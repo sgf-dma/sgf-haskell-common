@@ -1,0 +1,44 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 5ce97c643b1ebef7a523bfca42bd71d8dacfedee0e4545bd4b9431e3d7edb8e2
+
+name:           sgf-haskell-common
+version:        0.4.1
+synopsis:       sgf's haskell common modules
+category:       Other
+homepage:       https://github.com/sgf-dma/sgf-haskell-common#readme
+bug-reports:    https://github.com/sgf-dma/sgf-haskell-common/issues
+author:         sgf
+maintainer:     sgf.dma@gmail.com
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/sgf-dma/sgf-haskell-common
+
+library
+  exposed-modules:
+      Sgf.Control.Applicative
+      Sgf.Control.Exception
+      Sgf.Control.Lens
+      Sgf.Control.Monad
+      Sgf.Data.List
+      Sgf.System.Process
+  other-modules:
+      Paths_sgf_haskell_common
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base
+    , directory
+    , filepath
+    , mtl
+    , transformers
+  default-language: Haskell2010
